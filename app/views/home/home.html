@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Lista plików</div>
+    <div class="panel-body">
+
+        <table class="table table-striped table-hover ">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th><i class="fa fa-sort-amount-desc"></i> Column heading</th>
+                <th><i class="fa fa-sort-amount-desc"></i> Column heading</th>
+                <th><i class="fa fa-sort-amount-desc"></i> Column heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="plik in listaPlikow">
+                <td ng-bind="$index + 1"></td>
+                <td ng-bind="plik.name"></td>
+                <td>Column content</td>
+                <td>Column content</td>
+            </tr>
+            </tbody>
+        </table>
+
+
+
+    </div>
+</div>
