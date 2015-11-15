@@ -25,7 +25,7 @@ angular.module('eventLocatorApp')
                             return $timeout(function() {
                                 var test = MockService.getPliki;
                                 return test;
-                            }, 200);
+                            }, 300);
                         }
                     }
                 })
