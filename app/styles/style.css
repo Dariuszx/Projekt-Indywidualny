@@ -3,3 +3,35 @@
     background-color: #43ac6a;
 }
 
+.link {
+    color: #93c54b;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.center-content {
+    text-align: center;
+}
+
+.avatar-max-size {
+    max-width: 150px;
+}
+
+.margin10 {
+    margin-top: 10px;
+}
+
+.margin5 {
+    margin-top: 5px;
+}
+
+.title {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.content-important {
+    background-color: #f8f5f0;
+}

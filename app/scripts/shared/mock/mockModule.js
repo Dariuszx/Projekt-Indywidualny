@@ -3,9 +3,11 @@ angular.module('fileManagement.MockModule', [])
 
         function getPliki() {
             return [{
+                id: 232,
                 name: 'jakis plik',
                 type: 'zip'
             }, {
+                id: 111,
                 name: 'plik inny',
                 type: 'rar'
             }]
