@@ -1,4 +1,4 @@
-angular.module('eventLocatorApp.MockModule', [])
+angular.module('fileManagement.MockModule', [])
     .service('MockService', [function() {
 
         function getPliki() {

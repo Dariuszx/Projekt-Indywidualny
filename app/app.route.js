@@ -1,4 +1,4 @@
-angular.module('eventLocatorApp')
+angular.module('fileManagement')
     .config(['$stateProvider', '$urlRouterProvider',
         function ($stateProvider, $urlRouterProvider) {
 
@@ -26,6 +26,15 @@ angular.module('eventLocatorApp')
                                 var test = MockService.getPliki;
                                 return test;
                             }, 300);
+                        }
+                    }
+                })
+                .state('root.file', {
+                    url: '/file/:fileId',
+                    views: {
+                        'content@': {
+                            templateUrl: 'views/file/file.html',
+                            controller: 'fileController'
                         }
                     }
                 })

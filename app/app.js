@@ -1,9 +1,10 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('eventLocatorApp', [
+angular.module('fileManagement', [
     'ui.router',
     'ui.bootstrap',
-    'eventLocatorApp.Home',
-    'eventLocatorApp.MockModule'
+    'fileManagement.Home',
+    'fileManagement.File',
+    'fileManagement.MockModule'
 ]);

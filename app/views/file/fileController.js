@@ -1,3 +1,5 @@
-/**
- * Created by dariusz on 17.11.15.
- */
+var fileController = angular.module('fileManagement.File', []);
+
+fileController.controller('fileController', ['$scope', function($scope) {
+
+}]);
