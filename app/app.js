@@ -8,5 +8,6 @@ angular.module('fileManagement', [
     'fileManagement.Home',
     'fileManagement.UserSearch',
     'fileManagement.File',
+    'fileManagement.ProfileModule',
     'fileManagement.MockModule'
 ]);

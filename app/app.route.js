@@ -39,12 +39,21 @@ angular.module('fileManagement')
                         }
                     }
                 })
-                .state('root.userFiles', {
-                    url: '/usersearch',
+                .state('root.search-user', {
+                    url: '/search-user/:userId',
                     views: {
                         'content@': {
-                            templateUrl: 'views/usersearch/userSearch.html',
+                            templateUrl: 'views/user-search/user-search.html',
                             controller: 'userSearchController'
+                        }
+                    }
+                })
+                .state('root.profile', {
+                    url: '/profile/:profileId',
+                    views: {
+                        'content@': {
+                            templateUrl: 'views/profile/profile.html',
+                            controller: 'profileController'
                         }
                     }
                 })

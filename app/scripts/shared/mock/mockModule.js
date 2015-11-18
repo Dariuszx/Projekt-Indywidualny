@@ -9,6 +9,12 @@ angular.module('fileManagement.MockModule', [])
             id: 111,
             name: 'plik inny',
             type: 'rar'
+        }];
+
+        var users = [{
+            id: 1,
+            nick: 'dybkad',
+            role: 'Developer'
         }]
 
 
@@ -23,6 +29,9 @@ angular.module('fileManagement.MockModule', [])
             }
             return false;
         }
+
+
+
 
         return {
             getPliki: getPliki(),
