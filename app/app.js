@@ -4,7 +4,9 @@
 angular.module('fileManagement', [
     'ui.router',
     'ui.bootstrap',
+    'fileManagement.HeaderModule',
     'fileManagement.Home',
+    'fileManagement.UserSearch',
     'fileManagement.File',
     'fileManagement.MockModule'
 ]);

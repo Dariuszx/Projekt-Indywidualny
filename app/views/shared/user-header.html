@@ -13,7 +13,8 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a ui-sref="root.home">Strona główna <span class="sr-only">(current)</span></a></li>
+                <!-- TODO tutaj nie odświeża się czasami-->
+                <li ng-class="{active: actualState === 0}"><a ui-sref="root.home">Strona główna <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">Pliki użytkownika</a></li>
                 <li><a href="#">Pliki udostępnione</a></li>
 

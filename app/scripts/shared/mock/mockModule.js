@@ -1,19 +1,31 @@
 angular.module('fileManagement.MockModule', [])
     .service('MockService', [function() {
 
+        var data = [{
+            id: 232,
+            name: 'jakis plik',
+            type: 'zip'
+        }, {
+            id: 111,
+            name: 'plik inny',
+            type: 'rar'
+        }]
+
+
         function getPliki() {
-            return [{
-                id: 232,
-                name: 'jakis plik',
-                type: 'zip'
-            }, {
-                id: 111,
-                name: 'plik inny',
-                type: 'rar'
-            }]
+            return data;
+        }
+
+        function getPlik(plikId) {
+            for(var i in data) {
+                if(data[i].id === plikId)
+                    return data[i];
+            }
+            return false;
         }
 
         return {
-            getPliki: getPliki()
+            getPliki: getPliki(),
+            getPlik: getPlik
         };
     }]);
