@@ -1,10 +1,8 @@
 
-var homeModule = angular.module('eventLocatorApp.Home', []);
+var homeModule = angular.module('fileManagement.Home', []);
 
 homeModule.controller('homeController', ['$scope', 'mockData', function($scope, mockData) {
 
-
-    console.log(mockData);
     $scope.listaPlikow = mockData;
 
 }]);

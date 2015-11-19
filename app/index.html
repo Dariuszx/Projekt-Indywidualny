@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="eventLocatorApp" ng-strict-di>
+<html ng-app="fileManagement" ng-strict-di>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="bower_components/bootstrap-themes/bootstrap-sandstone/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/bootstrap-themes/bootstrap-sandstone/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/bootstrap-mod.css">
 </head>
@@ -30,8 +30,15 @@
 <script src="app.js"></script>
 <script src="app.route.js"></script>
 
-<!--Directives-->
+<!--Controllers-->
+<script src="views/shared/headerController.js">1</script>
 <script src="views/home/homeController.js"></script>
+<script src="views/user-search/userSearchController.js"></script>
+<script src="views/file/fileController.js"></script>
+<script src="views/profile/profileController.js"></script>
+
+
+<!--Mock-->
 <script src="scripts/shared/mock/mockModule.js"></script>
 
 

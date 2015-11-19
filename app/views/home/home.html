@@ -1,27 +1,40 @@
 <div class="panel panel-default">
-    <div class="panel-heading">Lista plików</div>
+    <div class="panel-heading">
+        <div class="container-fluid">
+           <div class="row"></div>
+           <div class="col-md-8">
+               <h5><i class="fa fa-files-o"></i> Lista plików</h5>
+           </div>
+           <div class="col-md-4">
+               <input ng-model="searchText " class="form-control input-sm" type="text" id="inputSmall" placeholder="Wyszukaj">
+           </div>
+           </div>
+       </div>
     <div class="panel-body">
 
-        <table class="table table-striped table-hover ">
+        <table class="table table-hover ">
             <thead>
             <tr>
                 <th>#</th>
-                <th><i class="fa fa-sort-amount-desc"></i> Column heading</th>
-                <th><i class="fa fa-sort-amount-desc"></i> Column heading</th>
-                <th><i class="fa fa-sort-amount-desc"></i> Column heading</th>
+                <th><i class="fa fa-sort-amount-desc"></i> Nazwa pliku</th>
+                <th><i class="fa fa-sort-amount-desc"></i> Typ</th>
+                <th><i class="fa fa-sort-amount-desc"></i> Rozmiar</th>
+                <th><i class="fa fa-sort-amount-desc"></i> Data dodania</th>
+                <th><i class="fa fa-sort-amount-desc"></i> Ścieżka</th>
+                <th><i class="fa fa-sort-amount-desc"></i> ID</th>
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="plik in listaPlikow">
+            <tr ng-repeat="plik in listaPlikow | filter:searchText">
                 <td ng-bind="$index + 1"></td>
-                <td ng-bind="plik.name"></td>
-                <td>Column content</td>
-                <td>Column content</td>
+                <td><a href="#" class="link" ng-bind="plik.name" ui-sref="root.file({fileId: plik.id})"></a></td>
+                <td ng-bind="plik.type"></td>
+                <td ng-bind="plik.size"></td>
+                <td ng-bind="plik.date"></td>
+                <td ng-bind="plik.path"></td>
+                <td ng-bind="plik.id"></td>
             </tr>
             </tbody>
         </table>
-
-
-
     </div>
 </div>

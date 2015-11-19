@@ -5,3 +5,7 @@ bower_components/
 tmp
 .DS_Store
 .idea
+.jshintrc
+.travis.yml
+MyApplication.iml
+e2e-tests

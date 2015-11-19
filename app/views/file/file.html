@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-info-circle"></i> Informacje o pliku</div>
+                <div class="panel-body">
+
+                    <table class="table">
+                        <tr>
+                            <td>Nazwa pliku:</td>
+                            <td ng-bind="file.name"></td>
+                        </tr>
+                        <tr>
+                            <td>Typ:</td>
+                            <td ng-bind="file.type"></td>
+                        </tr>
+                        <tr>
+                            <td>Rozmiar:</td>
+                            <td>default data</td>
+                        </tr>
+                        <tr>
+                            <td>Data dodania:</td>
+                            <td>default data</td>
+                        </tr>
+                        <tr>
+                            <td>Ścieżka:</td>
+                            <td>default data</td>
+                        </tr>
+                        <tr>
+                            <td>ID:</td>
+                            <td ng-bind="file.id"></td>
+                        </tr>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-user"></i> Właściciel pliku</div>
+                <div class="panel-body">
+                    <div class="container-fluid">
+                                <div class="center-content">
+                                    <img src="static/images/user.png" class="avatar img-circle img-thumbnail avatar-max-size" alt="avatar">
+                                </div>
+
+                        <div class="panel panel-default margin10">
+                            <div class="panel-body center-content content-important">
+                                <ul class="list-unstyled center-content">
+                                    <li class="title" ng-bind="fileOwner.name"></li>
+                                    <li ng-bind="fileOwner.role">Developer</li>
+                                </ul>
+                                <a ui-sref="root.profile({profileId: file.ownerId})" class="btn btn-primary btn-sm margin5">Pokaż profil</a>
+                                <a href="#" class="btn btn-success btn-sm margin5">Wyślij wiadomość</a>
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
