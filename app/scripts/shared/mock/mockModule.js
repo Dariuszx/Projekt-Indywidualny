@@ -4,16 +4,24 @@ angular.module('fileManagement.MockModule', [])
         var data = [{
             id: 232,
             name: 'jakis plik',
-            type: 'zip'
+            type: 'zip',
+            ownerId: 1
         }, {
             id: 111,
             name: 'plik inny',
-            type: 'rar'
+            type: 'rar',
+            ownerId: 2
         }];
 
         var users = [{
             id: 1,
+            nick: 'kowalj',
+            name: 'Jan Kowalski',
+            role: 'iOS Developer'
+        }, {
+            id: 2,
             nick: 'dybkad',
+            name: 'Dariusz Dybka',
             role: 'Developer'
         }]
 
@@ -30,11 +38,17 @@ angular.module('fileManagement.MockModule', [])
             return false;
         }
 
-
+        function getUser(userId) {
+            for(var i in users) {
+                if(users[i].id === userId)
+                    return users[i];
+            }
+        }
 
 
         return {
             getPliki: getPliki(),
-            getPlik: getPlik
+            getPlik: getPlik,
+            getUser: getUser
         };
     }]);
