@@ -17,7 +17,7 @@ angular.module('fileManagement.MockModule', [])
             id: 1,
             nick: 'kowalj',
             name: 'Jan Kowalski',
-            role: 'iOS Developer'
+            role: 'iOS Developer' //TODO adres email
         }, {
             id: 2,
             nick: 'dybkad',

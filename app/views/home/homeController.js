@@ -1,8 +1,10 @@
 
 var homeModule = angular.module('fileManagement.Home', []);
 
-homeModule.controller('homeController', ['$scope', 'mockData', function($scope, mockData) {
+homeModule.controller('homeController', ['$scope', 'files',
+    function($scope, files) {
 
-    $scope.listaPlikow = mockData;
+    $scope.listaPlikow = files;
+
 
 }]);

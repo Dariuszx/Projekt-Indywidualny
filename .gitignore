@@ -6,6 +6,7 @@ tmp
 .DS_Store
 .idea
 .jshintrc
-.travis.yml
-MyApplication.iml
-e2e-tests
+.travis.ymlbę
+e2e-testlas
+**/.idea/workspace.xml
+**/.idea/tasks.xml

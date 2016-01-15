@@ -22,12 +22,11 @@ angular.module('fileManagement')
                         }
                     },
                     resolve: {
-                        mockData: function($timeout, MockService) {
-                            return $timeout(function() {
-                                var test = MockService.getPliki;
-                                return test;
-                            }, 300);
-                        }
+                        files: ['DataService', function(DataService) {
+                            return DataService.getAllFiles().then(function(res) {
+                                return res.data;
+                            });
+                        }]
                     }
                 })
                 .state('root.file', {
