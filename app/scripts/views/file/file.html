@@ -8,7 +8,7 @@
                     <table class="table">
                         <tr>
                             <td>Nazwa pliku:</td>
-                            <td ng-bind="file.name"></td>
+                            <td ng-bind="file.filename"></td>
                         </tr>
                         <tr>
                             <td>Typ:</td>
@@ -16,19 +16,19 @@
                         </tr>
                         <tr>
                             <td>Rozmiar:</td>
-                            <td>default data</td>
+                            <td ng-bind="file.size"></td>
                         </tr>
                         <tr>
                             <td>Data dodania:</td>
-                            <td>default data</td>
+                            <td ng-bind="file.date_added"></td>
                         </tr>
                         <tr>
                             <td>Ścieżka:</td>
-                            <td>default data</td>
+                            <td ng-bind="file.path"></td>
                         </tr>
                         <tr>
                             <td>ID:</td>
-                            <td ng-bind="file.id"></td>
+                            <td ng-bind="file.file_id"></td>
                         </tr>
                     </table>
 
@@ -42,13 +42,13 @@
                 <div class="panel-body">
                     <div class="container-fluid">
                                 <div class="center-content">
-                                    <img src="static/images/user.png" class="avatar img-circle img-thumbnail avatar-max-size" alt="avatar">
+                                    <img src="../../MyApplication/app/static/images/user.png" class="avatar img-circle img-thumbnail avatar-max-size" alt="avatar">
                                 </div>
 
                         <div class="panel panel-default margin10">
                             <div class="panel-body center-content content-important">
                                 <ul class="list-unstyled center-content">
-                                    <li class="title" ng-bind="fileOwner.name"></li>
+                                    <li class="title" ng-bind="file.name + ' ' + file.surname"></li>
                                     <li ng-bind="fileOwner.role">Developer</li>
                                 </ul>
                                 <a ui-sref="root.profile({profileId: file.ownerId})" class="btn btn-primary btn-sm margin5">Pokaż profil</a>

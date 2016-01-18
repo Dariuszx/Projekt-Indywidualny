@@ -8,53 +8,77 @@ angular.module('fileManagement')
                     abstract: true,
                     views: {
                         'header': {
-                            templateUrl: 'views/shared/user-header.html',
+                            templateUrl: 'scripts/views/header/user-header.html',
                             controller: 'headerController'
                         }
-                    }
+                    },
+                    //resolve: {
+                    //    authorize: ['AuthorizationFactory',
+                    //        function (AuthorizationFactory) {
+                    //            return AuthorizationFactory.authorize();
+                    //        }]
+                    //}
                 })
                 .state('root.home', {
                     url: '/',
                     views: {
                         'content@': {
-                            templateUrl: 'views/home/home.html',
+                            templateUrl: 'scripts/views/home/home.html',
                             controller: 'homeController'
                         }
                     },
                     resolve: {
-                        mockData: function($timeout, MockService) {
-                            return $timeout(function() {
-                                var test = MockService.getPliki;
-                                return test;
-                            }, 300);
-                        }
+                        files: ['DataService', function(DataService) {
+                            return DataService.getFiles().then(function(res) {
+                                return res.data;
+                            });
+                        }]
+                    },
+                    data: {
+                        roles: []
                     }
                 })
                 .state('root.file', {
                     url: '/file/:fileId',
                     views: {
                         'content@': {
-                            templateUrl: 'views/file/file.html',
+                            templateUrl: 'scripts/views/file/file.html',
                             controller: 'fileController'
                         }
+                    },
+                    resolve: {
+                        file: ['DataService', '$stateParams', function(DataService, $stateParams) {
+                            return DataService.getFiles($stateParams.fileId).then(function(res) {
+                                return res.data;
+                            })
+                        }]
+                    },
+                    data: {
+                        roles: []
                     }
                 })
                 .state('root.search-user', {
                     url: '/search-user/:userId',
                     views: {
                         'content@': {
-                            templateUrl: 'views/user-search/user-search.html',
+                            templateUrl: 'scripts/views/user-search/user-search.html',
                             controller: 'userSearchController'
                         }
+                    },
+                    data: {
+                        roles: []
                     }
                 })
                 .state('root.profile', {
                     url: '/profile/:profileId',
                     views: {
                         'content@': {
-                            templateUrl: 'views/profile/profile.html',
+                            templateUrl: 'scripts/views/profile/profile.html',
                             controller: 'profileController'
                         }
+                    },
+                    data: {
+                        roles: []
                     }
                 })
 
