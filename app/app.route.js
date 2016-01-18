@@ -12,12 +12,24 @@ angular.module('fileManagement')
                             controller: 'headerController'
                         }
                     },
-                    //resolve: {
-                    //    authorize: ['AuthorizationFactory',
-                    //        function (AuthorizationFactory) {
-                    //            return AuthorizationFactory.authorize();
-                    //        }]
-                    //}
+                    resolve: {
+                        authorize: ['AuthorizationFactory',
+                            function (AuthorizationFactory) {
+                                return AuthorizationFactory.authorize();
+                            }]
+                    }
+                })
+                .state('root.welcome', {
+                    url: '/welcome',
+                    views: {
+                        'content@': {
+                            templateUrl: 'scripts/views/welcomePage/welcomePage.html',
+                            controller: 'welcomePageController'
+                        }
+                    },
+                    data: {
+                        roles: []
+                    }
                 })
                 .state('root.home', {
                     url: '/',

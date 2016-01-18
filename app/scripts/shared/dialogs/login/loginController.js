@@ -24,7 +24,7 @@ dialogModule.controller('LoginDialogController', ['$scope', '$modalInstance', 'P
             }).then(function () {
                 $modalInstance.deffered.resolve();
                 $scope.close();
-                $state.go('site.home');
+                $state.go('root.home');
             }, function () {
                 $scope.error = "Niepoprawne hasło lub nazwa użytkownika";
             });
