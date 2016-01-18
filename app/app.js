@@ -9,6 +9,6 @@ angular.module('fileManagement', [
     'fileManagement.UserSearch',
     'fileManagement.File',
     'fileManagement.ProfileModule',
-    'fileManagement.MockModule',
-    'fileManagement.ToolsModule'
+    'fileManagement.ToolsModule',
+    //'fileManagement.AuthorizationModule'
 ]);

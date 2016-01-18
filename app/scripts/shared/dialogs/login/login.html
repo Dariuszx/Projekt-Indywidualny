@@ -1,0 +1,57 @@
+
+<div class="modal-header">
+    <h4>Zaloguj się</h4>
+</div>
+
+<div class="modal-body" stop-event="touchend">
+    <div ng-show="error" class="alert alert-danger">{{error}}</div>
+
+    <form name="form" ng-submit="signIn()" role="form" novalidate="On">
+
+        <div class="form-group">
+            <label for="username">Nazwa użytkownika</label>
+            <i class="fa fa-key"></i>
+
+            <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    class="form-control"
+                    ng-model="username" autofocus="On" required />
+                  <span
+                          ng-show="form.username.$dirty && form.username.$error.required"
+                          class="help-block">Nazwa użytkownika jest wymagana</span>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Hasło</label>
+            <i class="fa fa-lock"></i>
+
+            <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="form-control"
+                    ng-model="password" required />
+
+                  <span
+                          ng-show="form.password.$dirty && form.password.$error.required"
+                          class="help-block">Hasło jest wymagane</span>
+        </div>
+
+        <div class="form-actions">
+            <button
+                    type="submit"
+                    ng-disabled="form.$invalid"
+                    class="btn btn-danger btn-sm">Login</button>
+            <button
+                    type="submit"
+                    ng-click="signUpButton()"
+                    class="btn btn-success btn-sm">Zarejestruj się</button>
+
+            <a class="btn btn-link" ng-click="renewPasswordButton()">Nie pamiętasz hasła?</a>
+        </div>
+    </form>
+</div>
+
+
