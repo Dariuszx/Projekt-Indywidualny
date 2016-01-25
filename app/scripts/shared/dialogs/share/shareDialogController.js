@@ -17,7 +17,21 @@ dialogModule.controller('shareDialogController', ['$scope', '$modalInstance', 'P
         });
 
         $scope.shareFile = function() {
-            console.log('dd');
+
+            for(i in $scope.data) {
+                if($scope.data[i] === "0") {
+                    DataService.shareFile($scope.file.file_id, 0);
+                    $scope.close();
+                    return;
+                }
+            }
+
+            for(i in $scope.data) {
+                if($scope.data[i] !== "0") {
+                    DataService.shareFile($scope.file.file_id, $scope.data[i]);
+                }
+            }
+            $scope.close();
         };
 
 

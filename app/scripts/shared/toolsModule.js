@@ -7,10 +7,18 @@ angular.module('fileManagement.ToolsModule', [])
         IS_LOGGED: 'http://0.0.0.0:5000/user/principal',
         LOGOUT_USER: 'http://0.0.0.0:5000/user/logout',
         CREATE_ACCOUNT: 'http://0.0.0.0:5000/user/create',
-        USER_LIST: 'http://0.0.0.0:5000/user/list'
+        USER_LIST: 'http://0.0.0.0:5000/user/list',
+        FILE_SHARE: 'http://0.0.0.0:5000/file/share/'
 
     })
     .service('DataService', ['$http', 'RestApi', function($http, RestApi) {
+
+        var shareFile = function(file_id, user_id) {
+            return $http({
+                method: 'GET',
+                url: RestApi.FILE_SHARE + file_id + '/' + user_id
+            })
+        };
 
         var getFiles = function(file_id) {
 
@@ -44,7 +52,8 @@ angular.module('fileManagement.ToolsModule', [])
         return {
             getFiles: getFiles,
             getSharedFiles: getSharedFiles,
-            getUserList: getUserList
+            getUserList: getUserList,
+            shareFile: shareFile
         }
 
     }]);
