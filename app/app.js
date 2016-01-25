@@ -14,5 +14,6 @@ angular.module('fileManagement', [
     'fileManagement.ProfileModule',
     'fileManagement.ToolsModule',
     'fileManagement.AuthorizationModule',
-    'fileManagement.DialogModule'
+    'fileManagement.DialogModule',
+    'fileManagement.SharedFilesModule'
 ]);

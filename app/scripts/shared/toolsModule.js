@@ -2,6 +2,7 @@
 angular.module('fileManagement.ToolsModule', [])
     .value('RestApi', {
         GET_ALL_FILES: 'http://0.0.0.0:5000/file',
+        GET_SHARED_FILES: 'http://0.0.0.0:5000/file/shared',
         LOGIN_USER: 'http://0.0.0.0:5000/user/login',
         IS_LOGGED: 'http://0.0.0.0:5000/user/principal',
         LOGOUT_USER: 'http://0.0.0.0:5000/user/logout',
@@ -25,8 +26,16 @@ angular.module('fileManagement.ToolsModule', [])
             }
         };
 
+        var getSharedFiles = function() {
+          return $http({
+              method: 'GET',
+              url: RestApi.GET_SHARED_FILES
+          })
+        };
+
         return {
-            getFiles: getFiles
+            getFiles: getFiles,
+            getSharedFiles: getSharedFiles
         }
 
     }]);

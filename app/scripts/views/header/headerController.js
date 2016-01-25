@@ -3,7 +3,7 @@ var headerModule = angular.module('fileManagement.HeaderModule', []);
 headerModule.controller('headerController', ['$scope', '$state', 'PrincipalFactory',
     function($scope, $state, PrincipalFactory) {
 
-        console.log($state);
+        $scope.identity = PrincipalFactory.getIdentity();
         $scope.actualState = 0;
 
         switch($state.current.name) {
