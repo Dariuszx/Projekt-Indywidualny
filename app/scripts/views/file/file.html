@@ -1,12 +1,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-8">
-            <div class="panel panel-primary">
+            <div class="panel panel-primary" ng-show="file.isOwner">
                 <div class="panel-heading">
                     <h3 class="panel-title"><i class="fa fa-cogs"></i> Operacje na pliku</h3>
                 </div>
                 <div class="panel-body">
-                    <a href="#" class="btn btn-success btn-sm">Udostępnij plik</a>
+                    <a href="#" class="btn btn-success btn-sm" ng-click="shareFile()">Udostępnij plik</a>
                     <a href="#" class="btn btn-success btn-sm">Edytuj</a>
                     <a href="#" class="btn btn-danger btn-sm">Usuń</a>
                 </div>

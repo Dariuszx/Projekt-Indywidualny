@@ -6,7 +6,8 @@ angular.module('fileManagement.ToolsModule', [])
         LOGIN_USER: 'http://0.0.0.0:5000/user/login',
         IS_LOGGED: 'http://0.0.0.0:5000/user/principal',
         LOGOUT_USER: 'http://0.0.0.0:5000/user/logout',
-        CREATE_ACCOUNT: 'http://0.0.0.0:5000/user/create'
+        CREATE_ACCOUNT: 'http://0.0.0.0:5000/user/create',
+        USER_LIST: 'http://0.0.0.0:5000/user/list'
 
     })
     .service('DataService', ['$http', 'RestApi', function($http, RestApi) {
@@ -33,9 +34,17 @@ angular.module('fileManagement.ToolsModule', [])
           })
         };
 
+        var getUserList = function() {
+            return $http({
+                method: 'GET',
+                url: RestApi.USER_LIST
+            })
+        };
+
         return {
             getFiles: getFiles,
-            getSharedFiles: getSharedFiles
+            getSharedFiles: getSharedFiles,
+            getUserList: getUserList
         }
 
     }]);

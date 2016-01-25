@@ -1,0 +1,18 @@
+
+<div class="modal-header">
+    <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4>Udostępnij plik</h4>
+</div>
+
+<div class="modal-body" stop-event="touchend">
+
+        <form name="shareForm">
+            <select multiple="" class="form-control" ng-model="data">
+                <option value="0">Wszyscy</option>
+                <option ng-repeat="user1 in userList" value="{{user1.user_id}}" ng-bind="user1.surname + ' ' + user1.name"></option>
+            </select>
+            <input type="submit" id="submit" ng-click="shareFile()" value="Udostępnij" />
+        </form>
+</div>
+
+
