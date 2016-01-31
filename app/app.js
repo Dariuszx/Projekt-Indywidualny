@@ -6,6 +6,7 @@ angular.module('fileManagement', [
     'ui.bootstrap',
     'ngCookies',
     'ngAnimate',
+    'ngFileUpload',
     'fileManagement.HeaderModule',
     'fileManagement.Home',
     'fileManagement.WelcomePage',

@@ -9,7 +9,8 @@
                             <h5><i class="fa fa-files-o"></i> Lista plików</h5>
                         </div>
                         <div class="col-md-4">
-                            <input ng-model="searchText " class="form-control input-sm" type="text" id="inputSmall" placeholder="Wyszukaj">
+                            <input ng-model="searchText " class="form-control input-sm" type="text" id="inputSmall"
+                                   placeholder="Wyszukaj">
                         </div>
                     </div>
                 </div>
@@ -30,7 +31,8 @@
                         <tbody>
                         <tr ng-repeat="plik in listaPlikow | filter:searchText">
                             <td ng-bind="$index + 1"></td>
-                            <td><a href="#" class="link" ng-bind="plik.name" ui-sref="root.file({fileId: plik.id})"></a></td>
+                            <td><a href="#" class="link" ng-bind="plik.name" ui-sref="root.file({fileId: plik.id})"></a>
+                            </td>
                             <td ng-bind="plik.type"></td>
                             <td ng-bind="plik.size"></td>
                             <td ng-bind="plik.date"></td>
@@ -47,6 +49,25 @@
                 <div class="panel-heading"><i class="fa fa-info-circle"></i> info</div>
                 <div class="panel-body">
                     Pliki aktualnie zalogowanego użytkownika
+
+                    <h4>Wyślij plik na serwer</h4>
+                    <button class="btn btn-success btn-sm"
+                            type="file"
+                            ngf-select="uploadFiles($file, $invalidFiles)"
+                            accept="*"
+                            ngf-max-size="10MB">
+                        Wybierz plik
+                    </button>
+                    <br><br>
+                    Wybrany plik:
+                    <div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+                          <span class="progress" ng-show="f.progress >= 0">
+                              <div class="progress progress-striped">
+                                  <div class="progress-bar progress-bar-success" style="width: {{f.progress}}%" ng-bind="f.progress + '%'"></div>
+                              </div>
+                          </span>
+                    </div>
+                    {{errorMsg}}
                 </div>
             </div>
         </div>
