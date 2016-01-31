@@ -6,7 +6,7 @@
                     <div class="container-fluid">
                         <div class="row"></div>
                         <div class="col-md-8">
-                            <h5><i class="fa fa-files-o"></i> Lista plików</h5>
+                            <h5><i class="fa fa-files-o"></i> Lista plików udostępnionych</h5>
                         </div>
                         <div class="col-md-4">
                             <input ng-model="searchText " class="form-control input-sm" type="text" id="inputSmall" placeholder="Wyszukaj">
@@ -20,6 +20,7 @@
                         <tr>
                             <th>#</th>
                             <th><i class="fa fa-sort-amount-desc"></i> Nazwa pliku</th>
+                            <th><i class="fa fa-sort-amount-desc"></i> Właściciel</th>
                             <th><i class="fa fa-sort-amount-desc"></i> Typ</th>
                             <th><i class="fa fa-sort-amount-desc"></i> Rozmiar</th>
                             <th><i class="fa fa-sort-amount-desc"></i> Data dodania</th>
@@ -31,6 +32,7 @@
                         <tr ng-repeat="plik in listaPlikow | filter:searchText">
                             <td ng-bind="$index + 1"></td>
                             <td><a href="#" class="link" ng-bind="plik.name" ui-sref="root.file({fileId: plik.id})"></a></td>
+                            <td ng-bind="plik.owner_surname + ' ' + plik.owner_name"></td>
                             <td ng-bind="plik.type"></td>
                             <td ng-bind="plik.size"></td>
                             <td ng-bind="plik.date"></td>
@@ -46,7 +48,7 @@
             <div class="panel panel-primary">
                 <div class="panel-heading"><i class="fa fa-info-circle"></i> info</div>
                 <div class="panel-body">
-                    Pliki aktualnie zalogowanego użytkownika
+                    Lista plików udostępnionych dla użytkownika
                 </div>
             </div>
         </div>

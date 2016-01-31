@@ -84,9 +84,10 @@ angular.module('fileManagement.AuthorizationModule')
                         }).success(function (data, status, headers, config) {
 
                             //Jeżeli serwer zwrócił null to oznacza, że jestem nie zalogowany
-                            if (data !== 'null') {
+                            if (data !== "null") {
                                 _identity = {
-                                    'username': data,
+                                    'username': data.username,
+                                    'user_id': data.user_id,
                                     'roles': ["Student"] //Na chwile obecną, każdy zalogowany użytkownik to Student
                                 };
                                 _authenticated = true;
@@ -150,6 +151,10 @@ angular.module('fileManagement.AuthorizationModule')
 
 
                         return deffered.promise;
+                    },
+                getIdentity:
+                    function() {
+                        return _identity;
                     }
             };
         }]);

@@ -15,7 +15,8 @@ var dialogModule = angular.module('fileManagement.DialogModule', [])
             var dialogs = {
                 loginDialog: null,
                 signUpDialog: null,
-                messageDialog: null
+                messageDialog: null,
+                shareDialog: null
             };
 
             /**
@@ -112,6 +113,19 @@ var dialogModule = angular.module('fileManagement.DialogModule', [])
                     };
 
                     return showDialog('signUpDialog', modalProperties);
+                },
+                showShareDialog: function(data) {
+
+                    var modalProperties = {
+                        templateUrl: 'scripts/shared/dialogs/share/shareDialog.html',
+                        controller: 'shareDialogController',
+                        backdrop: 'static',
+                        keyboard: false
+                    };
+
+                    return showDialog('shareDialog', modalProperties, {
+                        data: data
+                    });
                 }
             };
         }]);

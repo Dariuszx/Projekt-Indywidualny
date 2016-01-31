@@ -12,12 +12,24 @@ angular.module('fileManagement')
                             controller: 'headerController'
                         }
                     },
-                    //resolve: {
-                    //    authorize: ['AuthorizationFactory',
-                    //        function (AuthorizationFactory) {
-                    //            return AuthorizationFactory.authorize();
-                    //        }]
-                    //}
+                    resolve: {
+                        authorize: ['AuthorizationFactory',
+                            function (AuthorizationFactory) {
+                                return AuthorizationFactory.authorize();
+                            }]
+                    }
+                })
+                .state('root.welcome', {
+                    url: '/welcome',
+                    views: {
+                        'content@': {
+                            templateUrl: 'scripts/views/welcomePage/welcomePage.html',
+                            controller: 'welcomePageController'
+                        }
+                    },
+                    data: {
+                        roles: []
+                    }
                 })
                 .state('root.home', {
                     url: '/',
@@ -76,6 +88,25 @@ angular.module('fileManagement')
                             templateUrl: 'scripts/views/profile/profile.html',
                             controller: 'profileController'
                         }
+                    },
+                    data: {
+                        roles: []
+                    }
+                })
+                .state('root.shared', {
+                    url: '/shared',
+                    views: {
+                        'content@': {
+                            templateUrl: 'scripts/views/shared-files/sharedFiles.html',
+                            controller: 'sharedFilesController'
+                        }
+                    },
+                    resolve: {
+                        files: ['DataService', function(DataService) {
+                            return DataService.getSharedFiles().then(function(res) {
+                                return res.data;
+                            });
+                        }]
                     },
                     data: {
                         roles: []

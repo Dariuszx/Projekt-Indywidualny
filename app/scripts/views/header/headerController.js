@@ -1,9 +1,9 @@
 var headerModule = angular.module('fileManagement.HeaderModule', []);
 
-headerModule.controller('headerController', ['$scope', '$state',
-    function($scope, $state) {
+headerModule.controller('headerController', ['$scope', '$state', 'PrincipalFactory',
+    function($scope, $state, PrincipalFactory) {
 
-        console.log($state);
+        $scope.identity = PrincipalFactory.getIdentity();
         $scope.actualState = 0;
 
         switch($state.current.name) {
@@ -13,5 +13,15 @@ headerModule.controller('headerController', ['$scope', '$state',
             case 'root.file':
                 $scope.actualState = 1;
         }
+
+        $scope.logout = function () {
+            PrincipalFactory.logout().then(function () {
+//                        $state.go('site.home({hash:hash})');
+                if ($state.is('root.welcome'))
+                    $state.reload();
+                else
+                    $state.go('root.welcome');
+            });
+        };
 
 }]);
